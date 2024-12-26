@@ -11,6 +11,7 @@
 - Overall power consumption of board cannot exceed 5V/1.5A (USB powered). There are only 3 pixels with each pulling a maximum of 60mA at 5V.
 - There should also be a RESET switch, functionality of whose and type is TBD.
 - The board size should not exceed Seed Studio's Xiao.
+- JLCPCB parts should be targeted for the BOM.
 
 #### Concept Image
 ![image](https://github.com/user-attachments/assets/4a011b19-a8fe-4cc9-abb9-a0bda0428528)
