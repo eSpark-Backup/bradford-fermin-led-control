@@ -22,7 +22,8 @@ The board comprises of three PCBs being referred to as:
 - The board should host a Male USB Type A for power and flashing.
 - Overall power consumption of board cannot exceed 5V/1.5A (USB powered). There are only 3 pixels with each pulling a maximum of 60mA at 5V.
 - There should also be a RESET switch, functionality of whose and type is TBD.
-- The board size should not exceed Seed Studio's Xiao.
+- The board size should be kept as small as possible.
+- The 2 x JSTs (for LED and Switch PCBs) should be placed in a single line opposite to MCU.
 - JLCPCB parts should be targeted for the BOM.
 
 #### Concept Image
