@@ -66,7 +66,7 @@ GenerateClassCluster=0
 DocumentUniqueId=JLCFPLCH
 
 [Document2]
-DocumentPath=LED_Control_PCB.PcbDoc
+DocumentPath=Main Board-v1.0.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
