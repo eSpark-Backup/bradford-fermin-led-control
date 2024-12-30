@@ -28,7 +28,7 @@ The board comprises of three PCBs being referred to as:
 #### Concept Image
 ![image](https://github.com/user-attachments/assets/8f9727fd-d65a-4a83-af41-a2342a111ad8)
 
-**Note: There is a discrepancy here between the image below and this statement since client is calling top facing connector as right-angled, so please ignore and consider what we consider right-angled.**
+**Note: There is a discrepancy here between the image and the PRD since client is calling top facing connector as right-angled, so please ignore and consider what we consider right-angled.**
 
 ### LED PCB Hardware Requirements
 - The board should have compatible mating connector to connect with the Main PCB.
@@ -48,6 +48,7 @@ The board comprises of three PCBs being referred to as:
 #### Concept Image
 ![image](https://github.com/user-attachments/assets/af7a636a-922e-41c5-9183-a42d10455e03)
 
+**Note: There is a discrepancy here between the image and the PRD since client is specifying JST connector type. We will go, however, with what's compatible and uniform with the rest of the boards.**
 
 ### Firmware Sequence for Hardware Design
 - 1 click on limit switch triggers first NeoPixel animation function.
