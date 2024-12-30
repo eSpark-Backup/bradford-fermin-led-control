@@ -36,9 +36,8 @@ The board comprises of three PCBs being referred to as:
 - The board should have a right-angled tactile switch acting as RESET button and placed in a manner shown in concept image below
 
 #### Concept Image
-![image](https://github.com/user-attachments/assets/d98daa20-57cd-482b-bec5-ff56b5a261f9)
+![image](https://github.com/user-attachments/assets/48fca796-2894-41e3-82b1-fb9e0aba5a79)
 
-![image](https://github.com/user-attachments/assets/e6fc6492-484c-46ac-a30d-d85ec8c54c20)
 
 ### Switch PCB Hardware Requirements
 - This board will only have a [limit switch](https://www.lcsc.com/product-detail/Limit-Switches_XKB-Connection-DM1-135P_C480264.html) and a Red LED.
