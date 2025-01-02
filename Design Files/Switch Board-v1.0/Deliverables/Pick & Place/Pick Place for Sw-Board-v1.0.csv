@@ -1,0 +1,17 @@
+Altium Designer Pick and Place Locations
+D:\eSpark-Consultants\bradfordfermin-ledcontrol\Design Files\Switch Board-v1.0\Project Outputs for Switch_Board-v1.0\Pick Place for Sw-Board-v1.0.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       02/01/25
+Time:       16:44
+Revision:   b03c06fd47a9186cc4264127cd5d4d2ecbaa7614
+Variant:    No variations
+Units used: mm
+
+"Designator","Comment","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"SW1","DM1-135P","TopLayer","DM1-135P","8.1198mm","4.6323mm","270","1A 30V Single Pole Double Throw (SPDT) 1,000,000 Times Plugin Limit Switches ROHS"
+"R1","220R","TopLayer","Res-0603","2.2860mm","2.0828mm","180","RES SMD 220 OHM 1% 1/10W 0603"
+"LED1","RED","TopLayer","LED-0603","2.3114mm","0.5588mm","0","RED LED 0603 Light Emitting Diodes"
+"J1","SM03B-SRSS-TB(LF)(SN)","TopLayer","SM03B-SRSS-TB(LF)(SN)","2.5906mm","5.8674mm","270","CONN HEADER SMD R/A 3POS 1MM"

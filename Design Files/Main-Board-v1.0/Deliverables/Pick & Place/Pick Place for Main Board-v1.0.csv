@@ -1,0 +1,62 @@
+Altium Designer Pick and Place Locations
+D:\eSpark-Consultants\bradfordfermin-ledcontrol\Design Files\Main-Board-v1.0\Project Outputs for Main Board - v1.0\Pick Place for Main Board-v1.0.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       02/01/25
+Time:       17:18
+Revision:   4467cf24081ff9e2a7cd3a15c23f3b7eb1ccaa72
+Variant:    No variations
+Units used: mm
+
+"Designator","Comment","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"R11","75R","TopLayer","Res-0201","12.4027mm","7.6520mm","90","RES 75 OHM 1% 1/20W 0201"
+"R10","10K","TopLayer","Res-0201","12.4027mm","6.4986mm","270","RES SMD 10K OHM 1% 1/20W 0201"
+"R9","10K","TopLayer","Res-0201","16.1923mm","7.1502mm","270","RES SMD 10K OHM 1% 1/20W 0201"
+"Q2","Si2302CDS","TopLayer","Sot-23","14.3127mm","7.0994mm","90","N-CHANNEL 20-V (D-S) MOSFET"
+"J4","SM03B-SRSS-TB(LF)(SN)","TopLayer","SM03B-SRSS-TB(LF)(SN)","24.9176mm","6.1468mm","90","CONN HEADER SMD R/A 3POS 1MM"
+"J3","SM04B-SRSS-TB(LF)(SN)","TopLayer","SM04B-SRSS-TB(LF)(SN)","24.9174mm","12.8778mm","90","CONN HEADER SMD R/A 4POS 1MM"
+"J2","HC-1.25-3PLT","TopLayer","HC-1.25-3PLT","14.1224mm","2.6670mm","0","1x3P 3P PicoBlade(MX 1.25) Tin 3 -25?~+85? 2A 1 1.25mm Brass Standing paste SMD,P=1.25mm Wire To Board Connector ROHS"
+"D6","MM3Z3V3B","TopLayer","SOD323F","19.9194mm","6.5675mm","0","DIODE ZENER 3.3V 200MW SOD323F"
+"TP8","TEST POINT","BottomLayer","Test-point","10.8402mm","5.3086mm","0","Test Point ON"
+"TP7","TEST POINT","BottomLayer","Test-point","8.4836mm","5.3086mm","0","Test Point ON"
+"J1","USB-05.","TopLayer","USB-05.","1.6510mm","8.8900mm","270","USB 2.0 1 4P Public Type-A Plugin USB Connectors ROHS"
+"C12","0.1uF","TopLayer","CAP-0201","4.9618mm","11.4571mm","270","CAP CER 0.1UF 25V X5R 0201"
+"TP6","TEST POINT","BottomLayer","Test-point","26.4066mm","5.1795mm","0","Test Point ON"
+"TP5","TEST POINT","BottomLayer","Test-point","26.3939mm","10.4373mm","0","Test Point ON"
+"TP4","TEST POINT","BottomLayer","Test-point","26.3939mm","13.0863mm","0","Test Point ON"
+"TP3","TEST POINT","BottomLayer","Test-point","14.4263mm","10.9474mm","0","Test Point ON"
+"TP2","TEST POINT","BottomLayer","Test-point","13.2595mm","5.3086mm","0","Test Point ON"
+"TP1","TEST POINT","BottomLayer","Test-point","26.3939mm","7.7957mm","0","Test Point ON"
+"R8","10K","TopLayer","Res-0201","15.9766mm","16.3532mm","270","RES SMD 10K OHM 1% 1/20W 0201"
+"D5","MM3Z3V3B","TopLayer","SOD323F","19.9194mm","4.8466mm","0","DIODE ZENER 3.3V 200MW SOD323F"
+"X1","12MHz","TopLayer","SMD3225-4P","18.3261mm","10.9728mm","90","CRYSTAL 12.0000MHZ 10PF SMD"
+"U3","GD25Q16EEIGR","TopLayer","USON-8(2x3)","6.4769mm","9.6266mm","90","IC FLASH 16MBIT SPI/QUAD 8USON"
+"U2","RP2040","TopLayer","56-QFN_(7X7)","11.8491mm","12.7254mm","90","133MHz LQFN-56(7x7) Microcontrollers (MCU/MPU/SOC) ROHS"
+"U1","RS3236-3.3YUTDN4","TopLayer","XDFN-4-EP(1x1)","5.9944mm","2.5654mm","180","500mA 70dB@(1kHz) Fixed 3.3V Positive electrode 7.5V XDFN-4-EP(1x1) Voltage Regulators - Linear, Low Drop Out (LDO) Regulators ROHS"
+"SW2","B3U-1000P","TopLayer","B3U-1000P","20.1422mm","16.1544mm","0","SWITCH TACTILE SPST-NO 0.05A 12V"
+"SW1","B3U-1000P","TopLayer","B3U-1000P","7.4562mm","5.2479mm","180","SWITCH TACTILE SPST-NO 0.05A 12V"
+"R7","75R","TopLayer","Res-0201","24.6634mm","2.4484mm","90","RES 75 OHM 1% 1/20W 0201"
+"R6","10K","TopLayer","Res-0201","16.7465mm","16.3532mm","90","RES SMD 10K OHM 1% 1/20W 0201"
+"R5","10K","TopLayer","Res-0201","24.6634mm","1.3150mm","270","RES SMD 10K OHM 1% 1/20W 0201"
+"R4","10K","TopLayer","Res-0201","20.8818mm","1.8984mm","90","RES SMD 10K OHM 1% 1/20W 0201"
+"R3","1K","TopLayer","Res-0201","8.4166mm","7.2644mm","180","RES 1K OHM 1% 1/20W 0201"
+"R2","27R","TopLayer","Res-0201","6.4622mm","14.3161mm","180","RES 27 OHM 1% 1/20W 0201"
+"R1","27R","TopLayer","Res-0201","6.4749mm","13.5984mm","180","RES 27 OHM 1% 1/20W 0201"
+"Q1","Si2302CDS","TopLayer","Sot-23","22.7614mm","1.8984mm","270","N-CHANNEL 20-V (D-S) MOSFET"
+"D4","DF2S6.8FS,L3M","TopLayer","SOD-923.","4.0894mm","7.9112mm","270","TVS DIODE 5VWM 9VC SOD923"
+"D3","DF2S6.8FS,L3M","TopLayer","SOD-923.","4.0894mm","9.8806mm","90","TVS DIODE 5VWM 9VC SOD923"
+"D2","DF2S6.8FS,L3M","TopLayer","SOD-923.","4.0894mm","6.3180mm","90","TVS DIODE 5VWM 9VC SOD923"
+"D1","NSR0320MW2T1G","TopLayer","SOD-323","3.7846mm","2.3114mm","90","DIODE SCHOTTKY 20V 1A SOD323"
+"C11","0.1uF","TopLayer","CAP-0201","17.4761mm","16.3532mm","270","CAP CER 0.1UF 25V X5R 0201"
+"C10","15pF","TopLayer","Cap-0201","18.3237mm","13.3350mm","180","CAP CER 15PF 50V C0G/NPO 0201"
+"C9","15pF","TopLayer","Cap-0201","16.2443mm","10.6619mm","90","CAP CER 15PF 50V C0G/NPO 0201"
+"C8","1uF","TopLayer","Cap-0201","6.8834mm","15.3424mm","180","CAP CER 1UF 6.3V X5R 0201"
+"C7","0.1uF","TopLayer","CAP-0201","6.8961mm","12.5254mm","180","CAP CER 0.1UF 25V X5R 0201"
+"C6","0.1uF","TopLayer","CAP-0201","16.4846mm","13.3350mm","0","CAP CER 0.1UF 25V X5R 0201"
+"C5","0.1uF","TopLayer","CAP-0201","6.8834mm","16.1187mm","180","CAP CER 0.1UF 25V X5R 0201"
+"C4","0.1uF","TopLayer","CAP-0201","12.5397mm","17.0180mm","180","CAP CER 0.1UF 25V X5R 0201"
+"C3","0.1uF","TopLayer","CAP-0201","8.9916mm","8.0518mm","180","CAP CER 0.1UF 25V X5R 0201"
+"C2","10uF","TopLayer","Cap-0402","7.5438mm","1.7780mm","90","CAP CER 10UF 10V X5R 0402"
+"C1","10uF","TopLayer","Cap-0402","5.9944mm","1.1684mm","180","CAP CER 10UF 10V X5R 0402"

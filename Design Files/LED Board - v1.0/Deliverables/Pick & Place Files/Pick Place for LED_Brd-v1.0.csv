@@ -1,0 +1,23 @@
+Altium Designer Pick and Place Locations
+D:\eSpark-Consultants\bradfordfermin-ledcontrol\Design Files\LED Board - v1.0\Project Outputs for LED Board-v1.0\Pick Place for LED_Brd-v1.0.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       02/01/25
+Time:       16:28
+Revision:   6da195e381c9936d23236ceca0d830d9fe5e7dea
+Variant:    No variations
+Units used: mm
+
+"Designator","Comment","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"C3","100nF","TopLayer","Cap-0402","8.0645","19.5326","0","CAP CER 0.1UF 25V X5R 0402"
+"C2","100nF","TopLayer","Cap-0402","8.0645","12.0904","0","CAP CER 0.1UF 25V X5R 0402"
+"C1","100nF","TopLayer","Cap-0402","8.1407","4.8006","0","CAP CER 0.1UF 25V X5R 0402"
+"SW1","EVQ-PUA02K","TopLayer","EVQPUA02K","6.0706","29.7180","0","SWITCH TACTILE SPST-NO 0.05A 12V"
+"R2","75R","TopLayer","Res-0402","3.9751","19.5072","180","RES 75 OHM 5% 1/16W 0402"
+"R1","75R","TopLayer","Res-0402","4.0005","12.1158","180","RES 75 OHM 5% 1/16W 0402"
+"LED3","WS2812B-XF02/W","TopLayer","WS2812B-XF02/W","6.0306","23.1140","180","SMD5050 Light Emitting Diodes (LED) ROHS"
+"LED2","WS2812B-XF02/W","TopLayer","WS2812B-XF02/W","6.0306","15.7480","180","SMD5050 Light Emitting Diodes (LED) ROHS"
+"LED1","WS2812B-XF02/W","TopLayer","WS2812B-XF02/W","6.0810","8.3830","180","SMD5050 Light Emitting Diodes (LED) ROHS"
+"J1","SM04B-SRSS-TB(LF)(SN)","TopLayer","SM04B-SRSS-TB(LF)(SN)","6.0706","0.8890","0","CONN HEADER SMD R/A 4POS 1MM"
