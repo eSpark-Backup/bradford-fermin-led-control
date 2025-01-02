@@ -5,12 +5,13 @@ D:\eSpark-Consultants\bradfordfermin-ledcontrol\Design Files\Main-Board-v1.0\Pro
 File Design Information:
 
 Date:       02/01/25
-Time:       17:18
-Revision:   4467cf24081ff9e2a7cd3a15c23f3b7eb1ccaa72
+Time:       18:18
+Revision:   fae03c8f315591cefc8d2f61e7737566b9b838dc
 Variant:    No variations
 Units used: mm
 
 Designator Comment               Layer       Footprint             Center-X(mm) Center-Y(mm) Rotation Description                                                                                                                           
+R12        10K                   TopLayer    Res-0201              21.5646mm    12.4206mm    90       "RES SMD 10K OHM 1% 1/20W 0201"                                                                                                       
 R11        75R                   TopLayer    Res-0201              12.4027mm    7.6520mm     90       "RES 75 OHM 1% 1/20W 0201"                                                                                                            
 R10        10K                   TopLayer    Res-0201              12.4027mm    6.4986mm     270      "RES SMD 10K OHM 1% 1/20W 0201"                                                                                                       
 R9         10K                   TopLayer    Res-0201              16.1923mm    7.1502mm     270      "RES SMD 10K OHM 1% 1/20W 0201"                                                                                                       

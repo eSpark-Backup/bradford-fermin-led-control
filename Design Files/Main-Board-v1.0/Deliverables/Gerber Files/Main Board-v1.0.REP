@@ -2,31 +2,10 @@
 FileName = Main Board-v1.0.GBR
 AutoAperture = True
 *************************************************************
-Generating : BoardCutout
-      File : Main Board-v1.0.GM2
+Generating : Bottom Solder
+      File : Main Board-v1.0.GBS
 
-    Adding Layer      : BoardCutout
-
-
-Used DCodes :
-    D10
-*************************************************************
-
-*************************************************************
-Generating : Keep-Out Layer
-      File : Main Board-v1.0.GKO
-
-    Adding Layer      : Keep-Out Layer
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : Main Board-v1.0.GBP
-
-    Adding Layer      : Bottom Paste
+    Adding Layer      : Bottom Solder
 
     Adding Layer      : Bottom Layer
 
@@ -34,7 +13,11 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-    D106
+    D75
+    D76
+    D77
+    D78
+    D111
 *************************************************************
 
 *************************************************************
@@ -78,80 +61,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Solder
-      File : Main Board-v1.0.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D75
-    D76
-    D77
-    D78
-    D111
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : Main Board-v1.0.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D49
-    D50
-    D51
-    D52
-    D53
-    D54
-    D55
-    D56
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-    D63
-    D64
-    D65
-    D66
-    D67
-    D68
-    D69
-    D70
-    D71
-    D72
-    D73
-    D74
-    D75
-    D76
-    D77
-    D78
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Main Board-v1.0.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
 Generating : Top Overlay
       File : Main Board-v1.0.GTO
 
@@ -172,31 +81,6 @@ Used DCodes :
     D20
     D21
     D22
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : Main Board-v1.0.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D10
-    D79
-    D80
-    D82
-    D101
-    D103
-    D104
-    D105
-    D106
-    D107
-    D108
-    D109
-    D110
 *************************************************************
 
 *************************************************************
@@ -263,6 +147,122 @@ Used DCodes :
     D103
     D104
     D105
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Main Board-v1.0.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D106
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Main Board-v1.0.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : BoardCutout
+      File : Main Board-v1.0.GM2
+
+    Adding Layer      : BoardCutout
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Main Board-v1.0.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D79
+    D80
+    D81
+    D101
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Main Board-v1.0.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : Main Board-v1.0.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
 *************************************************************
 
 *************************************************************
