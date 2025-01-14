@@ -37,6 +37,7 @@ int main() {
     pico_led_init();
     while (true) {
         printf("hello world\n\r");
+        printf("hello world2\n\r");
         pico_set_led(true);
         sleep_ms(LED_DELAY_MS);
         pico_set_led(false);
