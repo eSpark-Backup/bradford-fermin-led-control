@@ -1,46 +1,46 @@
-/**
- * Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
-
 #include "pico/stdlib.h"
-#include<stdio.h>
+#include <stdio.h>
 
+#define LIMIT_SW 17
+#define LIMIT_SW_LED 16
 
-#ifndef LED_DELAY_MS
-#define LED_DELAY_MS 250
-#endif
-
-// Initialize the GPIO for the LED
-void pico_led_init(void) {
-#ifdef PICO_DEFAULT_LED_PIN
-    // A device like Pico that uses a GPIO for the LED will define PICO_DEFAULT_LED_PIN
-    // so we can use normal GPIO functionality to turn the led on and off
-    stdio_init_all();
-    sleep_ms(2000); 
-
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-#endif
+// Initialize the GPIO for the button and LED
+static void led_init(void) { 
+    gpio_init(LIMIT_SW);
+    gpio_set_dir(LIMIT_SW, GPIO_IN);
+    gpio_pull_up(LIMIT_SW);   // Enable internal pull-up resistor
+    gpio_init(LIMIT_SW_LED);
+    gpio_set_dir(LIMIT_SW_LED, GPIO_OUT);
+    gpio_put(LIMIT_SW_LED, false); // Ensure LED starts off
 }
 
-// Turn the LED on or off
-void pico_set_led(bool led_on) {
-#if defined(PICO_DEFAULT_LED_PIN)
-    // Just set the GPIO on or off
-    gpio_put(PICO_DEFAULT_LED_PIN, led_on);
-#endif
-}
-
-int main() {
-    pico_led_init();
-    while (true) {
-        printf("hello world\n\r");
-        printf("hello world2\n\r");
-        pico_set_led(true);
-        sleep_ms(LED_DELAY_MS);
-        pico_set_led(false);
-        sleep_ms(LED_DELAY_MS);
+// Interrupt callback function for switch press
+void gpio_callback(uint gpio, uint32_t events) {
+    if (gpio == LIMIT_SW) {
+        if (gpio_get(LIMIT_SW) == 0) { // Switch pulled low (button pressed)
+            gpio_put(LIMIT_SW_LED, true); // Turn on the LED
+            printf("Switch pressed! LED ON\n");
+        } else { // Switch released (button not pressed)
+            gpio_put(LIMIT_SW_LED, false); // Turn off the LED
+            printf("Switch released! LED OFF\n");
+        }
     }
+}
+
+int main(void) {
+    stdio_init_all();
+    sleep_ms(2000); // Wait for serial connection to initialize
+    printf("Program started. Waiting for switch press...\n");
+
+    led_init(); // Initialize LED and button
+
+    // Enable interrupt for both rising and falling edges (button press/release)
+    gpio_set_irq_enabled_with_callback(LIMIT_SW, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+
+    while (true) {
+        printf("running \n\r");
+        sleep_ms(1000); // Sleep to reduce CPU usage
+    }
+
+    return 0; 
 }
