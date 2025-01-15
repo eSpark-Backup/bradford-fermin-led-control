@@ -51,7 +51,27 @@ The board comprises of three PCBs being referred to as:
 **Note: There is a discrepancy here between the image and the PRD since client is specifying JST connector type. We will go, however, with what's compatible and uniform with the rest of the boards.**
 
 ### Firmware Sequence for Hardware Design
-- 1 click on limit switch triggers first NeoPixel animation function.
-- 2 clicks in quick succession trigger second function.
-- 3 clicks in quick succession trigger third function.
-- RESET button clears current function state.
+- Nothing happens on single click
+- 2 clicks in quick succession on limit switch triggers below NeoPixel animation function:
+    - Function Name: Printing
+    - Color: Green
+    - Effect: Slow pulsing (1-second fade in and out) to indicate active progress.
+- 3 clicks in quick succession on limit switch triggers below NeoPixel animation function:
+    - Function Name: Print Finished
+    - Color: Blue
+    - Effect: Quick double pulse every few seconds (take 5 seconds for now) to show completion without urgency.
+- 4 clicks in quick succession on limit switch triggers below NeoPixel animation function:
+    - Function Name: Idle (Ready to Print)
+    - Color: White
+    - Effect: Steady glow to signify readiness and neutrality.
+- 5 clicks in quick succession on limit switch triggers below NeoPixel animation function:
+    - Function Name: Pause
+    - Color: Yellow
+    - Effect: Slow blinking (0.5 seconds on, 0.5 seconds off) to indicate a temporary halt
+- 6 clicks in quick succession on limit switch triggers below NeoPixel animation function:
+    - Function Name: Error
+    - Color: Red
+    - Effect: Rapid flashing (0.25 seconds on, 0.25 seconds off) to grab attention for troubleshooting.
+- The "idle" state should be the default state the device is in when powered on
+- Clicking the button on the neopixel PCB will take the printer from the "pause" state to the "printing" state (the button should work ONLY when in the "pause" state)
+- RESET button clears current function state and brings board back to Idle state.
