@@ -40,13 +40,15 @@ add_executable(switch_led_seq switch_led_seq.c )
 pico_set_program_name(switch_led_seq "switch_led_seq")
 pico_set_program_version(switch_led_seq "0.1")
 
+pico_generate_pio_header(switch_led_seq ${CMAKE_CURRENT_LIST_DIR}/ws2812.pio)
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(switch_led_seq 0)
 pico_enable_stdio_usb(switch_led_seq 1)
 
 # Add the standard library to the build
 target_link_libraries(switch_led_seq
-        pico_stdlib)
+        pico_stdlib
+        hardware_pio)
 
 # Add the standard include files to the build
 target_include_directories(switch_led_seq PRIVATE
