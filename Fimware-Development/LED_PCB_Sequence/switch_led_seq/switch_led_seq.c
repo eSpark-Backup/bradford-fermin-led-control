@@ -11,7 +11,7 @@
 #define LED_BRD_SWITCH 18          // Reset switch/LED board switch
 
 //config
-#define NUM_LEDS 10          // Number of LEDs in the strip
+#define NUM_LEDS 3          // Number of LEDs in the strip
 #define IS_RGBW false        // Set true if the LED strip supports RGBW
 
 
@@ -62,13 +62,13 @@ static void task_in_progress(PIO pio, uint sm, int num_leds) {
             button_count = 0;
             for (int i = 0; i < num_leds; i++) {
                 for (int j = 0; j < num_leds; j++) {
-                    put_pixel(j == i ? 0x00FF00 : 0x000000); // Green dot
+                    put_pixel(j == i ? 0xFF0000  : 0x000000); // Green dot
                 }
                 sleep_ms(100);
             }
             for (int i = num_leds - 1; i >= 0; i--) {
                 for (int j = 0; j < num_leds; j++) {
-                    put_pixel(j == i ? 0x00FF00 : 0x000000); // Green dot
+                    put_pixel(j == i ? 0xFF0000  : 0x000000); // Green dot
                 }
                 sleep_ms(100);
             }
@@ -84,7 +84,7 @@ static void task_done(PIO pio, uint sm, int num_leds) {
         for (int i = 0; i < 3; i++) { // Flash three times
             if (limit_sw_triggered || led_brd_sw_triggered) break; // Check before each iteration
             for (int j = 0; j < num_leds; j++) {
-                put_pixel(0x00FF00); // All green
+                put_pixel(0xFF0000 ); // All green
             }
             sleep_ms(200);
             clear_leds(pio, sm, num_leds);
@@ -209,6 +209,7 @@ int main(void) {
     PIO pio = pio0;
     int sm = 0;
     led_init();
+    gpio_put(LED_2, true);
     printf("LED initialized\n\r");
 
     ws2812_program_init(pio, sm, pio_add_program(pio, &ws2812_program), LED_1, 800000, IS_RGBW);
@@ -232,6 +233,7 @@ int main(void) {
             break;
     }
     gpio_put(LIMIT_SW_LED, false);
+    gpio_put(LED_2, false);
     limit_sw_triggered = false;   // Reset LIMIT_SW flag
     led_brd_sw_triggered = false; // Reset LED_BRD_SWITCH flag
     sleep_ms(1000); // Prevent CPU overload
