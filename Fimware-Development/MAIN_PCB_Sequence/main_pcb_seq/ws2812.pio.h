@@ -16,9 +16,9 @@
 #define ws2812_wrap 3
 #define ws2812_pio_version 0
 
-#define ws2812_T1 2
-#define ws2812_T2 5
-#define ws2812_T3 3
+#define ws2812_T1 6
+#define ws2812_T2 9
+#define ws2812_T3 6
 
 static const uint16_t ws2812_program_instructions[] = {
             //     .wrap_target
@@ -72,9 +72,9 @@ static inline void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, 
 #define ws2812_parallel_wrap 3
 #define ws2812_parallel_pio_version 0
 
-#define ws2812_parallel_T1 2
-#define ws2812_parallel_T2 5
-#define ws2812_parallel_T3 3
+#define ws2812_parallel_T1 6
+#define ws2812_parallel_T2 9
+#define ws2812_parallel_T3 6
 
 static const uint16_t ws2812_parallel_program_instructions[] = {
             //     .wrap_target

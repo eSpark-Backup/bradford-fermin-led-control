@@ -1,20 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pico/stdlib.h"
+#include "pico/time.h"
 #include "ws2812.pio.h"
 
+#define TEST_MODE 0
 
 // GPIO Pin Definitions
 #define LIMIT_SW 17                // Limit switch
-#define LIMIT_SW_LED 19            // Limit switch LED
 #define LED_1 12                   // RGB LED
 #define LED_2 11                   // RGB LED2
 #define LED_BRD_SWITCH 18          // Reset switch/LED board switch
+#if TEST_MODE
+#define NUM_LEDS 10          // Number of LEDs in the strip
+#define LIMIT_SW_LED 19            // Limit switch LED
+#else
+#define LIMIT_SW_LED 16            // Limit switch LED
+#define NUM_LEDS 3          // Number of LEDs in the strip
+
+#endif
 
 // Config
-#define NUM_LEDS 10          // Number of LEDs in the strip
 #define IS_RGBW false        // Set true if the LED strip supports RGBW
-#define WINDOW_TIME  1500000 // Button press window time in microseconds(1.5 sec)git
+#define FREQ    400000
 
 // States
 typedef enum {
@@ -165,12 +173,13 @@ static void led_init(void) {
 // Handle state transitions
 static void state_transition(void) {
     switch (button_count) {
+        case 0: current_state = IDLE; break;
         case 2: current_state = PRINTING; break;
         case 3: current_state = PRINT_FINISHED; break;
         case 4: current_state = IDLE; break;
         case 5: current_state = PAUSE; break;
         case 6: current_state = ERROR; break;
-        default: current_state = IDLE; break;
+        default: 
     }
  
 }
@@ -186,27 +195,31 @@ static bool debounce(uint gpio) {
     return false;
 }
 
+
+int64_t starTimer_callback(alarm_id_t id, void *user_data) {
+    press_window = false;  // Reset press window after time has elapsed
+    state_transition();
+    return 0;              // Return 0 to indicate no rescheduling
+}
+
 // Shared GPIO callback
 static void shared_callback(uint gpio, uint32_t events) {
     if (gpio == LIMIT_SW && debounce(gpio)) {
         gpio_put(LIMIT_SW_LED, true);
+
         if (!press_window) {
             press_window = true;
             press_window_start_time = time_us_64();
-            button_count = 1;
-
-        }
-               
-        if (time_us_64() - press_window_start_time < WINDOW_TIME) {
-            button_count++;
-            printf("Button pressed! Count: %d\n", button_count);
-            limit_sw_triggered = true; // Set flag for LIMIT_SW
-
-        } else {
-            press_window = false;
-
-        }
-    } else if (gpio == LED_BRD_SWITCH && debounce(gpio)) {
+            button_count = 0;
+            add_alarm_in_us(1500000, starTimer_callback, NULL, false);             // Start a timer for 1.5 seconds (1500000 microseconds)
+             }
+                if(button_count<6){
+                button_count++;}
+                printf("Button pressed! Count: %d\n", button_count);
+                limit_sw_triggered = true; // Set flag for LIMIT_SW            
+            } 
+ 
+    else if (gpio == LED_BRD_SWITCH && debounce(gpio)) {
         printf("Reset pressed. Returning to IDLE state.\n");
         current_state = IDLE;
         button_count = 1;
@@ -223,13 +236,12 @@ int main(void) {
     int sm = 0;
     led_init();
 
-    ws2812_program_init(pio, sm, pio_add_program(pio, &ws2812_program), LED_1, 600000, IS_RGBW);
+    ws2812_program_init(pio, sm, pio_add_program(pio, &ws2812_program), LED_1, FREQ, IS_RGBW);
 
     gpio_set_irq_enabled_with_callback(LIMIT_SW, GPIO_IRQ_EDGE_FALL, true, &shared_callback);
     gpio_set_irq_enabled_with_callback(LED_BRD_SWITCH, GPIO_IRQ_EDGE_FALL, true, &shared_callback);
 
     while (true) {
-            state_transition();
             printf("state: %d\n\r" , current_state);
         switch (current_state) {
             case IDLE: idle_animation(pio, sm, NUM_LEDS); break;
@@ -240,7 +252,9 @@ int main(void) {
         }
         limit_sw_triggered = false;   // Reset LIMIT_SW flag
         led_brd_sw_triggered = false;
+
         gpio_put(LIMIT_SW_LED, false);
 
     }
+
 }

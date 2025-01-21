@@ -42,6 +42,8 @@
         "pio.h": "c",
         "clocks.h": "c",
         "cstdint": "c",
-        "compare": "c"
+        "compare": "c",
+        "stdio.h": "c",
+        "algorithm": "c"
     }
 }
