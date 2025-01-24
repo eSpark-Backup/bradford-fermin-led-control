@@ -50,7 +50,8 @@ pico_enable_stdio_usb(main 1)
 target_link_libraries(main
         pico_stdlib
         hardware_pio
-         )
+        hardware_timer
+        hardware_clocks )
 
 # Add the standard include files to the build
 target_include_directories(main PRIVATE

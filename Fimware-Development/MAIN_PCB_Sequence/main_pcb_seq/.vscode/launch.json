@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "version": "0.2.0",
     "configurations": [
         {
@@ -68,3 +69,28 @@
         },
     ]
 }
+=======
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/GitHub/bradfordfermin-ledcontrol/Fimware-Development/MAIN_PCB_Sequence/main_pcb_seq",
+      "program": "d:/GitHub/bradfordfermin-ledcontrol/Fimware-Development/MAIN_PCB_Sequence/main_pcb_seq/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
+>>>>>>> Stashed changes

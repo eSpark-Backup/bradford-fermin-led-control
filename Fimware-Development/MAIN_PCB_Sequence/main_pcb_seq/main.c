@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "pico/stdlib.h"
 #include "pico/time.h"
-#include "ws2812.pio.h"
+#include "tm1803.pio.h"
 
 #define TEST_MODE 0
 
@@ -13,13 +13,14 @@
 #define LED_BRD_SWITCH 18          // Reset switch/LED board switch
 
 #if TEST_MODE  
-#define NUM_LEDS 10          // Number of LEDs in the strip
+#define NUM_LEDS 6         // Number of LEDs in the strip
 #define LIMIT_SW_LED 19            // Limit switch LED
 
 #else  
 #define LIMIT_SW_LED 16            // Limit switch LED
-#define NUM_LEDS 3          // Number of LEDs in the strip
+#define NUM_LEDS 3                   // Number of LEDs in the strip
 
+         
 #endif
 
 // Config
@@ -139,7 +140,7 @@ static void print_finished_animation(PIO pio, uint sm, int num_leds) {
             clear_leds(pio, sm, num_leds);
             sleep_ms(100);
         }
-        sleep_ms(250);
+        sleep_ms(3500);
     }
 }
 
@@ -193,7 +194,7 @@ static void state_transition(void) {
 static bool debounce(uint gpio) {
     static uint64_t last_time = 0;
     uint64_t now = time_us_64();
-    if (now - last_time > 130000) { // 130ms debounce
+    if (now - last_time > 170000) { // 130ms debounce
         last_time = now;
         return true;
     }
@@ -232,6 +233,9 @@ static void shared_callback(uint gpio, uint32_t events) {
                     limit_sw_triggered = true; // Set flag for LIMIT_SW            
                 
     }
+    else if ((gpio == LED_BRD_SWITCH) && (current_state == PAUSE) && debounce(gpio)){
+        current_state = PRINTING;
+    }
 
     else if (gpio == LED_BRD_SWITCH && debounce(gpio)) {
         printf("Reset pressed. Returning to IDLE state.\n");
@@ -251,7 +255,8 @@ int main(void) {
     int sm = 0;
     led_init();
 
-    ws2812_program_init(pio, sm, pio_add_program(pio, &ws2812_program), LED_1, FREQ, IS_RGBW);
+    // ws2812_program_init(pio, sm, pio_add_program(pio, &ws2812_program), LED_1, FREQ, IS_RGBW);
+    tm1803_program_init(pio, sm, pio_add_program(pio, &tm1803_program), LED_1 ,FREQ );
 
     gpio_set_irq_enabled_with_callback(LIMIT_SW, GPIO_IRQ_EDGE_FALL, true, &shared_callback);
     gpio_set_irq_enabled_with_callback(LED_BRD_SWITCH, GPIO_IRQ_EDGE_FALL, true, &shared_callback);
